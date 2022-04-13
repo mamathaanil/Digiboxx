@@ -3,16 +3,18 @@ package com.mamatha.dev.automation.diggiboxAuto;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-public class HooksOnFeature extends BaseDriverClass {
+public class HooksOnFeature extends BaseCombinedDriver {
 
 	@Before
 	public void beforeScenarios() {
-		setUp();
+
+		// setUp("BrowserStack");
+		setUp("Emulator");
 	}
 
 	@After
 	public void afterScenarios() {
-		tearDown();
+		// tearDown();
 	}
 
 }

@@ -4,10 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import com.mamatha.dev.automation.diggiboxAuto.BaseDriverClass;
+import com.mamatha.dev.automation.diggiboxAuto.BaseCombinedDriver;
 
-public class LoginPageFactory extends BaseDriverClass {
+public class LoginPageFactory extends BaseCombinedDriver {
 
 	@FindBy(id = "com.liqvd.digibox.test:id/edtDigiSpaceName")
 	@CacheLookup
@@ -26,7 +27,8 @@ public class LoginPageFactory extends BaseDriverClass {
 	WebElement signIn;
 
 	public LoginPageFactory() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 15), this);
+		// WaitHandler.waitForElement(name);
 	}
 
 	public WebElement getName() {

@@ -1,13 +1,44 @@
 package com.mamatha.dev.automation.pages;
 
-import com.mamatha.dev.automation.diggiboxAuto.BaseDriverClass;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class HomePageFactory extends BaseDriverClass {
+import com.mamatha.dev.automation.diggiboxAuto.BaseCombinedDriver;
 
-//	MobileElement el1 = (MobileElement) driver.findElementById("com.liqvd.digibox.test:id/tvFolderTitle");
-//	el1.click();
-//	MobileElement el2 = (MobileElement) driver.findElementByXPath("//android.widget.FrameLayout[@content-desc=\"Add\"]/android.widget.FrameLayout/android.widget.ImageView");
-//	el2.click();
-//	MobileElement el3 = (MobileElement) driver.findElementById("com.liqvd.digibox.test:id/upload_new_file");
-//	el3.click();
+public class HomePageFactory extends BaseCombinedDriver {
+
+	@FindBy(id = "com.liqvd.digibox.test:id/tvFolderTitle")
+	@CacheLookup
+	WebElement homePage;
+
+	@FindBy(xpath = "//android.widget.FrameLayout[@content-desc=\"Add\"]/android.widget.FrameLayout/android.widget.ImageView")
+	@CacheLookup
+	WebElement addFile;
+
+	@FindBy(id = "com.liqvd.digibox.test:id/upload_new_file")
+	@CacheLookup
+	WebElement uploadFile;
+
+	public HomePageFactory() {
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 15), this);
+		// WaitHandler.waitForElement(homePage);
+	}
+
+	public String getHomePage() {
+
+		return homePage.getAttribute("text");
+	}
+
+	public WebElement getAddFile() {
+		return addFile;
+	}
+
+	public WebElement getUploadFile() {
+
+		return uploadFile;
+	}
+
 }

@@ -29,7 +29,10 @@ public class BaseDriverClass {
 			caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 			caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 
-			caps.setCapability(MobileCapabilityType.APP, "/Users/mamathaanil/Downloads/app-3204-DevTest-debug.apk");
+			caps.setCapability(MobileCapabilityType.APP,
+					"/Volumes/Macintosh HD - Data/WorkSpace/Git Files/diggiboxAuto/apk/app-3203-DevTest-debug.apk");
+			// caps.setCapability(MobileCapabilityType.APP,
+			// "/Users/mamathaanil/Downloads/app-3204-DevTest-debug.apk");
 			caps.setCapability(MobileCapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, false);
 			// caps.setCapability(, false)
 			caps.setCapability("autoGrantPermissions", "true");

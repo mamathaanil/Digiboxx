@@ -27,8 +27,4 @@ public class LoginPageObjects extends LoginPageFactory {
 
 	}
 
-	public boolean verifyHomePage() {
-
-		return true;
-	}
 }
