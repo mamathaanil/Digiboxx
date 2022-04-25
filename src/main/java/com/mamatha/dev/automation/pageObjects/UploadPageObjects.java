@@ -12,9 +12,9 @@ public class UploadPageObjects extends UploadPageFactory {
 		return getUploadPageTitle().getAttribute("text");
 	}
 
-	public void clickImage1() {
-		System.out.println("The image name is :" + getImage1().getText());
-		getImage1().click();
+	public void clickImage(String imageName) {
+		System.out.println("The image name is :" + getImage(imageName).getText());
+		getImage(imageName).click();
 
 	}
 

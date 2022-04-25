@@ -15,6 +15,7 @@ public class BaseCombinedDriver {
 
 	public static final String USERNAME = "krishnadas_1IAzGJ";
 	public static final String Automate_Key = "o5y8zHkPG9hgL7ipzpFM";
+	public static final String APPNAME = "/apk/app-3203-DevTest-debug.apk";
 	public static WebDriver driver;
 	public static ProcessBuilder pb;
 
@@ -36,10 +37,7 @@ public class BaseCombinedDriver {
 				caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
 				caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 				caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
-				caps.setCapability(MobileCapabilityType.APP,
-						"/Volumes/Macintosh HD - Data/WorkSpace/Git Files/diggiboxAuto/apk/app-3203-DevTest-debug.apk");
-				// caps.setCapability(MobileCapabilityType.APP,
-				// "/Users/mamathaanil/Downloads/app-3204-DevTest-debug.apk");
+				caps.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + APPNAME);
 				caps.setCapability(MobileCapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, false);
 				caps.setCapability("autoGrantPermissions", "true");
 				// caps.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");

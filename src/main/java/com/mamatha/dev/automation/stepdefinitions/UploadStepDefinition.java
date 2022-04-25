@@ -33,7 +33,7 @@ public class UploadStepDefinition {
 
 	@When("I click on single image")
 	public void i_click_on_single_image() throws InterruptedException {
-		uploadPO.clickImage1();
+		uploadPO.clickImage("Phoenix1.jpeg");
 		Thread.sleep(10000);
 	}
 

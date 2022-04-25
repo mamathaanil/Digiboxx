@@ -1,5 +1,6 @@
 package com.mamatha.dev.automation.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -15,9 +16,9 @@ public class UploadPageFactory extends BaseCombinedDriver {
 	@CacheLookup
 	WebElement title;
 
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Phoenix1.jpeg\"]")
-	@CacheLookup
-	WebElement image1;
+//	@FindBy(xpath = "//android.widget.TextView[@text=\"Phoenix1.jpeg\"]")
+//	@CacheLookup
+//	WebElement image1;
 
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Phoenix2.jpeg\"]")
 	@CacheLookup
@@ -33,8 +34,9 @@ public class UploadPageFactory extends BaseCombinedDriver {
 		return title;
 	}
 
-	public WebElement getImage1() {
-		return image1;
+	public WebElement getImage(String imageName) {
+		WebElement image = driver.findElement(By.xpath("//android.widget.TextView[@text=\"" + imageName + "\"]"));
+		return image;
 	}
 
 	public WebElement getImage2() {
