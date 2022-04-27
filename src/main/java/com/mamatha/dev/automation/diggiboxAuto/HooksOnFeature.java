@@ -13,8 +13,8 @@ public class HooksOnFeature extends BaseCombinedDriver {
 	}
 
 	@After
-	public void afterScenarios() {
-		// tearDown();
+	public void afterScenarios() throws InterruptedException {
+		tearDown();
 	}
 
 }

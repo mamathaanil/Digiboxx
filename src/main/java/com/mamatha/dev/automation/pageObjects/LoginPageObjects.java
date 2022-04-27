@@ -18,7 +18,7 @@ public class LoginPageObjects extends LoginPageFactory {
 	}
 
 	public void enterPassword() {
-		getPwd().sendKeys("Test@123");
+		getPwd().sendKeys("Mozark@123");
 
 	}
 

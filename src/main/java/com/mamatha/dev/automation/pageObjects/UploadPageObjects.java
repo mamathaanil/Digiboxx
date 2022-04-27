@@ -18,7 +18,12 @@ public class UploadPageObjects extends UploadPageFactory {
 
 	}
 
-	public void clickImage2() {
-		getImage2().click();
+	public void selectImages() throws InterruptedException {
+		getMoreOptions().click();
+		Thread.sleep(1000);
+		getSelectAll().click();
+		Thread.sleep(2000);
+		getOpen().click();
 	}
+
 }

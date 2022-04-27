@@ -16,4 +16,29 @@ public class HomePageObjects extends HomePageFactory {
 		getUploadFile().click();
 	}
 
+	public void clickCreateFolder() {
+		getCreateFolder().click();
+	}
+
+	public void enterFolderName() {
+
+	}
+
+	public boolean checkImage(String imageName) throws InterruptedException {
+		Thread.sleep(5000);
+		return getImage(imageName).isDisplayed();
+
+	}
+
+	public void deleteAllImages() throws InterruptedException {
+		getSelectAll().click();
+		getDelete().click();
+		Thread.sleep(5000);
+		getConfDelete().click();
+	}
+
+	public boolean checkImages() {
+		return true;
+	}
+
 }

@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import com.mamatha.dev.automation.pageObjects.HomePageObjects;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
@@ -18,6 +20,7 @@ public class BaseCombinedDriver {
 	public static final String APPNAME = "/apk/app-3203-DevTest-debug.apk";
 	public static WebDriver driver;
 	public static ProcessBuilder pb;
+	public static String[] images;
 
 	public static void setUp(String device) {
 
@@ -72,8 +75,10 @@ public class BaseCombinedDriver {
 
 	}
 
-	public static void tearDown() {
-
+	public static void tearDown() throws InterruptedException {
+		HomePageObjects homePO = new HomePageObjects();
+		homePO.deleteAllImages();
+		Thread.sleep(5000);
 		if (driver != null) {
 			driver.quit();
 		}

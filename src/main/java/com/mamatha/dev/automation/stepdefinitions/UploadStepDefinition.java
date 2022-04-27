@@ -38,7 +38,20 @@ public class UploadStepDefinition {
 	}
 
 	@Then("The image is uploaded to digiboxx homepage")
-	public void the_image_is_uploaded_to_digiboxx_homepage() {
+	public void the_image_is_uploaded_to_digiboxx_homepage() throws InterruptedException {
+		Assert.assertEquals(homePO.checkImage("Phoenix1"), true);
 
 	}
+
+	@When("^I select multiple images$")
+	public void i_select_multiple_images() throws Throwable {
+		uploadPO.selectImages();
+		Thread.sleep(5000);
+	}
+
+	@Then("^The images are uploaded to digiboxx homepage$")
+	public void the_images_are_uploaded_to_digiboxx_homepage() throws Throwable {
+		Assert.assertEquals(homePO.checkImages(), true);
+	}
+
 }

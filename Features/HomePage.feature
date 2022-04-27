@@ -15,3 +15,19 @@ Feature: Sign into Digiboxx
     Then I reach the folder with files
     When I click on single image
     Then The image is uploaded to digiboxx homepage
+    
+  Scenario: Upload multiple images
+    Given I click on the add button
+    And I click on the upload button
+    Then I reach the folder with files
+    When I select multiple images
+    Then The images are uploaded to digiboxx homepage
+    
+  Scenario: Create new folder
+    Given I click on the add button
+    And I click on the create folder button
+    Then I provide a filename
+    When I click the create button
+    Then a new folder is created
+    
+    

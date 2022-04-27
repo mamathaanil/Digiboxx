@@ -16,13 +16,9 @@ public class UploadPageFactory extends BaseCombinedDriver {
 	@CacheLookup
 	WebElement title;
 
-//	@FindBy(xpath = "//android.widget.TextView[@text=\"Phoenix1.jpeg\"]")
-//	@CacheLookup
-//	WebElement image1;
-
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Phoenix2.jpeg\"]")
+	@FindBy(xpath = "//android.widget.ImageButton[@content-desc=\"More options\"]")
 	@CacheLookup
-	WebElement image2;
+	WebElement moreOptions;
 
 	public UploadPageFactory() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 15), this);
@@ -39,13 +35,26 @@ public class UploadPageFactory extends BaseCombinedDriver {
 		return image;
 	}
 
-	public WebElement getImage2() {
-		return image2;
+	public WebElement getMoreOptions() {
+		return moreOptions;
 	}
 
+	public WebElement getSelectAll() {
+		WebElement selectAll = driver.findElement(By.xpath("//android.widget.TextView[@text=\"Select all\"]"));
+		return selectAll;
+	}
+
+	public WebElement getOpen() {
+		WebElement open = driver.findElement(By.id("com.android.documentsui:id/option_menu_list"));
+		return open;
+	}
 }
 
-//MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[3]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.TextView[1]");
-//el1.click();
-//MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[4]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.TextView[1]");
-//el2.click();
+/*
+ * By.xpath("//android.widget.ImageButton[@content-desc="More options"]")
+ *
+ * By.xpath("//android.widget.TextView[@text="Select all"]")
+ * 
+ * By.id("com.android.documentsui:id/option_menu_list")
+ * 
+ */
