@@ -39,7 +39,7 @@ public class HomePageFactory extends BaseCombinedDriver {
 //	@CacheLookup
 //	WebElement selectAll;
 
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 
 	public HomePageFactory() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 15), this);
@@ -72,7 +72,9 @@ public class HomePageFactory extends BaseCombinedDriver {
 
 	public WebElement getImage(String imageName) {
 
-		By byImage = By.xpath("//android.widget.TextView[contains(@text,\"" + imageName + "\")]");
+		// By byImage = By.xpath("//android.widget.TextView[contains(@text,\"" +
+		// imageName + "\")]");
+		By byImage = By.xpath("//android.widget.TextView[@text=\"" + imageName + "\"]");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(byImage));
 		WebElement image = driver.findElement(byImage);
 		return image;
@@ -118,7 +120,7 @@ public class HomePageFactory extends BaseCombinedDriver {
 
 	public WebElement getFolder(String folderName) {
 
-		By byFolder = By.id("//android.widget.TextView[@text=\"" + folderName + "\"]");
+		By byFolder = By.xpath("//android.widget.TextView[@text=\"" + folderName + "\"]");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(byFolder));
 		WebElement folder = driver.findElement(byFolder);
 		return folder;

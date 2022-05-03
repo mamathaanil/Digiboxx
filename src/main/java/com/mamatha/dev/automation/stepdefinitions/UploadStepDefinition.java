@@ -38,7 +38,7 @@ public class UploadStepDefinition {
 
 	@Then("The image is uploaded to digiboxx homepage")
 	public void the_image_is_uploaded_to_digiboxx_homepage() throws InterruptedException {
-		Assert.assertEquals(homePO.checkImage("Phoenix1"), true);
+		Assert.assertEquals(homePO.checkImage("Phoenix1.j..."), true);
 
 	}
 
