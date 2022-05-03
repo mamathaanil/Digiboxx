@@ -1,11 +1,15 @@
 package com.mamatha.dev.automation.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.mamatha.dev.automation.diggiboxAuto.BaseCombinedDriver;
 
@@ -31,9 +35,11 @@ public class HomePageFactory extends BaseCombinedDriver {
 	@CacheLookup
 	WebElement enterFolderName;
 
-	@FindBy(id = "com.liqvd.digibox.test:id/ivSelectAll")
-	@CacheLookup
-	WebElement selectAll;
+//	@FindBy(id = "com.liqvd.digibox.test:id/ivSelectAll")
+//	@CacheLookup
+//	WebElement selectAll;
+
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 	public HomePageFactory() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 15), this);
@@ -66,33 +72,62 @@ public class HomePageFactory extends BaseCombinedDriver {
 
 	public WebElement getImage(String imageName) {
 
-		WebElement image = driver
-				.findElement(By.xpath("//android.widget.TextView[contains(@text,\"" + imageName + "\")]"));
+		By byImage = By.xpath("//android.widget.TextView[contains(@text,\"" + imageName + "\")]");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(byImage));
+		WebElement image = driver.findElement(byImage);
 		return image;
 	}
 
+	public boolean waitTillAllImagesLoad() {
+
+		By byImages = By.xpath("//android.widget.TextView[@resource-id=\"com.liqvd.digibox.test:id/tvName\"]");
+		wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(byImages)));
+		return true;
+	}
+
 	public WebElement getSelectAll() {
+
+		By bySelectAll = By.id("com.liqvd.digibox.test:id/ivSelectAll");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(bySelectAll));
+		WebElement selectAll = driver.findElement(bySelectAll);
 		return selectAll;
 	}
 
 	public WebElement getDelete() {
-		WebElement delete = driver.findElement(By.id("com.liqvd.digibox.test:id/ivDelete"));
+		By byDelete = By.id("com.liqvd.digibox.test:id/ivDelete");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(byDelete));
+		WebElement delete = driver.findElement(byDelete);
 		return delete;
 	}
 
 	public WebElement getConfDelete() {
-		WebElement confDelete = driver.findElement(By.id("com.liqvd.digibox.test:id/tvContinue"));
+
+		By byConfDelete = By.id("com.liqvd.digibox.test:id/tvContinue");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(byConfDelete));
+		WebElement confDelete = driver.findElement(byConfDelete);
 		return confDelete;
 	}
 
+	public WebElement getCreateFolderButton() {
+
+		By byCreateButton = By.id("com.liqvd.digibox.test:id/btnCreateFolder");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(byCreateButton));
+		WebElement createButton = driver.findElement(byCreateButton);
+		return createButton;
+	}
+
+	public WebElement getFolder(String folderName) {
+
+		By byFolder = By.id("//android.widget.TextView[@text=\"" + folderName + "\"]");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(byFolder));
+		WebElement folder = driver.findElement(byFolder);
+		return folder;
+	}
+
 	/*
-	 * 
-	 * driver.findElementById("com.liqvd.digibox.test:id/tvDeleteFile");
-	 * el2.click(); MobileElement el3 = (MobileElement)
-	 * driver.findElementById("com.liqvd.digibox.test:id/tvContinue"); el3.click();
-	 * MobileElement el4 = (MobileElement)
-	 * driver.findElementById("com.liqvd.digibox.test:id/tvName"); el4.click();
-	 * 
-	 * com.liqvd.digibox.test:id/ivSelectAll
+	 * com.liqvd.digibox.test:id/btnCreateFolder folder
+	 * com.liqvd.digibox.test:id/tvName text = Mamatha
+	 * com.liqvd.digibox.test:id/btnCreateFolder
+	 * "//android.widget.TextView[@text()=\""+folderName+"\]"
 	 */
 }

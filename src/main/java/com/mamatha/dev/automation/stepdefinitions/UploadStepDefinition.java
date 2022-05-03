@@ -34,7 +34,6 @@ public class UploadStepDefinition {
 	@When("I click on single image")
 	public void i_click_on_single_image() throws InterruptedException {
 		uploadPO.clickImage("Phoenix1.jpeg");
-		Thread.sleep(10000);
 	}
 
 	@Then("The image is uploaded to digiboxx homepage")
@@ -46,12 +45,31 @@ public class UploadStepDefinition {
 	@When("^I select multiple images$")
 	public void i_select_multiple_images() throws Throwable {
 		uploadPO.selectImages();
-		Thread.sleep(5000);
 	}
 
 	@Then("^The images are uploaded to digiboxx homepage$")
 	public void the_images_are_uploaded_to_digiboxx_homepage() throws Throwable {
 		Assert.assertEquals(homePO.checkImages(), true);
+	}
+
+	@And("^I click on the create folder button$")
+	public void i_click_on_the_create_folder_button() throws Throwable {
+		homePO.clickCreateFolder();
+	}
+
+	@Then("^I provide a filename \"([^\"]*)\"$")
+	public void i_provide_a_filename_something(String strArg1) throws Throwable {
+		homePO.enterFolderName(strArg1);
+	}
+
+	@When("^I click the create button$")
+	public void i_click_the_create_button() throws Throwable {
+		homePO.clickCreateBtn();
+	}
+
+	@Then("^a folder \"([^\"]*)\" is created$")
+	public void a_folder_something_is_created(String strArg1) throws Throwable {
+		Assert.assertEquals(homePO.checkFolder(strArg1), true);
 	}
 
 }

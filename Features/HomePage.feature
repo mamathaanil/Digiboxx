@@ -26,8 +26,8 @@ Feature: Sign into Digiboxx
   Scenario: Create new folder
     Given I click on the add button
     And I click on the create folder button
-    Then I provide a filename
+    Then I provide a filename "Mamatha"
     When I click the create button
-    Then a new folder is created
+    Then a folder "Mamatha" is created
     
     

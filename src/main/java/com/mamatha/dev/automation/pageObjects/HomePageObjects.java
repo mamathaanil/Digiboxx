@@ -20,12 +20,23 @@ public class HomePageObjects extends HomePageFactory {
 		getCreateFolder().click();
 	}
 
-	public void enterFolderName() {
+	public void enterFolderName(String folderName) {
+		getTypeFolderName().sendKeys(folderName);
+		// TouchActions action = new TouchActions(driver);
+		// action.
+	}
 
+	public void clickCreateBtn() {
+		getCreateFolderButton().click();
+	}
+
+	public boolean checkFolder(String folderName) {
+
+		return getFolder(folderName).isDisplayed();
 	}
 
 	public boolean checkImage(String imageName) throws InterruptedException {
-		Thread.sleep(5000);
+
 		return getImage(imageName).isDisplayed();
 
 	}
@@ -33,12 +44,11 @@ public class HomePageObjects extends HomePageFactory {
 	public void deleteAllImages() throws InterruptedException {
 		getSelectAll().click();
 		getDelete().click();
-		Thread.sleep(5000);
 		getConfDelete().click();
 	}
 
 	public boolean checkImages() {
-		return true;
+		return waitTillAllImagesLoad();
 	}
 
 }

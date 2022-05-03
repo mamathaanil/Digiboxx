@@ -78,7 +78,7 @@ public class BaseCombinedDriver {
 	public static void tearDown() throws InterruptedException {
 		HomePageObjects homePO = new HomePageObjects();
 		homePO.deleteAllImages();
-		Thread.sleep(5000);
+		// Thread.sleep(5000);
 		if (driver != null) {
 			driver.quit();
 		}
