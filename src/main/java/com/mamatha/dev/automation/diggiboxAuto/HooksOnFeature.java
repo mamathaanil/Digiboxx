@@ -8,8 +8,8 @@ public class HooksOnFeature extends BaseCombinedDriver {
 	@Before
 	public void beforeScenarios() {
 
-		// setUp("BrowserStack");
-		setUp("Emulator");
+		setUp("BrowserStack");
+		// setUp("Emulator");
 	}
 
 	@After

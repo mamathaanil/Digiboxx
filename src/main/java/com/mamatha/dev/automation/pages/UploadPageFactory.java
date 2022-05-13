@@ -24,7 +24,7 @@ public class UploadPageFactory extends BaseCombinedDriver {
 	@CacheLookup
 	WebElement moreOptions;
 
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 
 	public UploadPageFactory() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 15), this);
@@ -49,13 +49,15 @@ public class UploadPageFactory extends BaseCombinedDriver {
 
 	public WebElement getSelectAll() {
 		By bySelectAll = By.xpath("//android.widget.TextView[@text=\"Select all\"]");
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(bySelectAll));
 		WebElement selectAll = driver.findElement(bySelectAll);
 		return selectAll;
 	}
 
 	public WebElement getOpen() {
-		By byOpen = By.id("com.android.documentsui:id/option_menu_list");
+		// By byOpen = By.id("com.android.documentsui:id/option_menu_list");
+		By byOpen = By.xpath("//android.widget.TextView[contains(@content-desc,\"view\")]");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(byOpen));
 		WebElement open = driver.findElement(byOpen);
 		return open;

@@ -10,14 +10,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.mamatha.dev.automation.pageObjects.HomePageObjects;
 
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 public class BaseCombinedDriver {
 
 	public static final String USERNAME = "krishnadas_1IAzGJ";
 	public static final String Automate_Key = "o5y8zHkPG9hgL7ipzpFM";
-	public static final String APPNAME = "/apk/app-3203-DevTest-debug.apk";
+	public static final String APPNAME = "/apk/app-3603-DevTest-debug.apk";
 	public static WebDriver driver;
 	public static ProcessBuilder pb;
 	public static String[] images;
@@ -46,7 +46,7 @@ public class BaseCombinedDriver {
 				// caps.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
 
 				urlEmulator = new URL("http://localhost:4723/wd/hub");
-				driver = new AppiumDriver(urlEmulator, caps);
+				driver = new AndroidDriver(urlEmulator, caps);
 
 				pb = new ProcessBuilder(cmd);
 				Process p = pb.start();
@@ -58,13 +58,35 @@ public class BaseCombinedDriver {
 			case ("BrowserStack"):
 				caps.setCapability("os_version", "9.0");
 				caps.setCapability("device", "Google Pixel 2");
-				caps.setCapability("app", "bs://4af439dbce0873aa25416982086790f1744f62c1");
+				caps.setCapability("app", "bs://b3c34673f92643ece4de73375af0beef7d4ecebf");
+				// 3203 "app_url": "bs://b3c34673f92643ece4de73375af0beef7d4ecebf"
+				// 3206 "app_url": "bs://d1d04ef787c645c47f0f43e317855a45996124d7"
 				caps.setCapability("project", "Login page");
 				caps.setCapability("autoGrantPermissions", "true");
+				caps.setCapability("browserstack.uploadMedia",
+						new String[] { "media://df28937da5fd9298b2748b43faeb79a4d07c17d0",
+								"media://4685f01cdb5d9efad55c8c5b0c0b1b6fc367ffdf",
+								"media://74d47c41a2b424f84b3dcfd37409031e4ab32389" });
 
+				/*
+				 * { "media_url": "media://df28937da5fd9298b2748b43faeb79a4d07c17d0",
+				 * "custom_id": "SampleMedia", "shareable_id": "krishnadas_1IAzGJ/SampleMedia" }
+				 * { "media_url": "media://4685f01cdb5d9efad55c8c5b0c0b1b6fc367ffdf",
+				 * "custom_id": "SampleMedia", "shareable_id": "krishnadas_1IAzGJ/SampleMedia" }
+				 * { "media_url": "media://74d47c41a2b424f84b3dcfd37409031e4ab32389",
+				 * "custom_id": "SampleMedia", "shareable_id": "krishnadas_1IAzGJ/SampleMedia" }
+				 */
 				urlBrowserStack = new URL(
 						"https://" + USERNAME + ":" + Automate_Key + "@hub-cloud.browserstack.com/wd/hub");
 				driver = new RemoteWebDriver(urlBrowserStack, caps);
+
+//				driver.pushFile("/sdcard/Download/DIGIBOX",
+//						new File("/Users/mamathaanil/Downloads/Digiboxx/images/fish.jpeg"));
+//				driver.pushFile("/sdcard/Download/DIGIBOX",
+//						new File("/Users/mamathaanil/Downloads/Digiboxx/images/puffin.jpeg"));
+//				driver.pushFile("/sdcard/Download/DIGIBOX",
+//						new File("/Users/mamathaanil/Downloads/Digiboxx/images/flower.jpeg"));
+
 				break;
 			}
 		} catch (Exception e) {

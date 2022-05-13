@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="156.715">
+<testcase classname="Sign into Digiboxx" name="Upload a single image" time="50.208">
+<system-out><![CDATA[Given I press the skip button...............................................passed
+Then I input the spacename..................................................passed
+And I input the email.......................................................passed
+And I input the password....................................................passed
+Then I click the signin button..............................................passed
+And verify that I have reached the homepage.................................passed
+Given I click on the add button.............................................passed
+And I click on the upload button............................................passed
+When I click on single image................................................passed
+Then The image is uploaded to digiboxx homepage.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Sign into Digiboxx" name="Upload multiple images" time="56.321">
+<failure message="androidx.test.uiautomator.StaleObjectException (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 0 milliseconds&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference&#10;Build info: version: '4.1.4', revision: '535d840ee2'&#10;System info: host: 'Mamathas-MacBook-Pro.local', ip: 'fe80:0:0:0:d9:4716:188f:1ce3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_311'&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Command: [25a0f7c63faa502c1a3834feecd04988cff04b34, isElementDisplayed {id=a02f0bcf-4824-4137-83db-90193f26cae9}]&#10;Capabilities {64bit: false, acceptSslCert: false, acceptSslCerts: false, adbExecTimeout: 120000, appActivity: com.liqvd.digibox.ui.MainAc..., appPackage: com.liqvd.digibox.test, autoGrantPermissions: true, automationName: uiautomator2, browserstack.appium_version: 1.17.0, browserstack.is_hub_canary: false, browserstack.minOSVersion: 6.0, bundleID: com.liqvd.digibox.test, bundleId: com.liqvd.digibox.test, chromeOptions: {w3c: false}, chromedriverPort: 18083, chromedriverPorts: [[18133, 18143]], databaseEnabled: false, detected_language: selenium/4.1.4 (java mac), device: google pixel 2, deviceApiLevel: 28, deviceManufacturer: Google, deviceModel: Pixel 2, deviceName: FA83E1A00861, deviceScreenDensity: 420, deviceScreenSize: 1080x1920, deviceUDID: FA83E1A00861, disableSuppressAccessibilityService: true, enablePerformanceLogging: false, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: Google Pixel 2-9.0}, nativeWebScreenshot: true, networkConnectionEnabled: true, newCommandTimeout: 0, new_bucketing: true, orig_os: android, osVersion: 9.0, os_version: 9.0, pixelRatio: 2.625, platform: ANDROID, platformName: ANDROID, platformVersion: 9, projectName: Login page, realMobile: true, skipServerInstallation: true, statBarHeight: 63, systemPort: 8203, takesScreenshot: true, udid: FA83E1A00861, uiautomator2ServerLaunchTimeout: 60000, version: , viewportRect: {height: 1731, left: 0, top: 63, width: 1080}, warnings: {}, webStorageEnabled: false}&#10;Element: [[RemoteWebDriver:  on ANDROID (25a0f7c63faa502c1a3834feecd04988cff04b34)] -&gt; id: com.liqvd.digibox.test:id/tvName]&#10;Session ID: 25a0f7c63faa502c1a3834feecd04988cff04b34" type="org.openqa.selenium.StaleElementReferenceException"><![CDATA[Given I press the skip button...............................................passed
+Then I input the spacename..................................................passed
+And I input the email.......................................................passed
+And I input the password....................................................passed
+Then I click the signin button..............................................passed
+And verify that I have reached the homepage.................................passed
+Given I click on the add button.............................................passed
+And I click on the upload button............................................passed
+When I select multiple images...............................................passed
+Then The images are uploaded to digiboxx homepage...........................failed
+
+StackTrace:
+org.openqa.selenium.StaleElementReferenceException: androidx.test.uiautomator.StaleObjectException (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'Mamathas-MacBook-Pro.local', ip: 'fe80:0:0:0:d9:4716:188f:1ce3%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_311'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [25a0f7c63faa502c1a3834feecd04988cff04b34, isElementDisplayed {id=a02f0bcf-4824-4137-83db-90193f26cae9}]
+Capabilities {64bit: false, acceptSslCert: false, acceptSslCerts: false, adbExecTimeout: 120000, appActivity: com.liqvd.digibox.ui.MainAc..., appPackage: com.liqvd.digibox.test, autoGrantPermissions: true, automationName: uiautomator2, browserstack.appium_version: 1.17.0, browserstack.is_hub_canary: false, browserstack.minOSVersion: 6.0, bundleID: com.liqvd.digibox.test, bundleId: com.liqvd.digibox.test, chromeOptions: {w3c: false}, chromedriverPort: 18083, chromedriverPorts: [[18133, 18143]], databaseEnabled: false, detected_language: selenium/4.1.4 (java mac), device: google pixel 2, deviceApiLevel: 28, deviceManufacturer: Google, deviceModel: Pixel 2, deviceName: FA83E1A00861, deviceScreenDensity: 420, deviceScreenSize: 1080x1920, deviceUDID: FA83E1A00861, disableSuppressAccessibilityService: true, enablePerformanceLogging: false, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: Google Pixel 2-9.0}, nativeWebScreenshot: true, networkConnectionEnabled: true, newCommandTimeout: 0, new_bucketing: true, orig_os: android, osVersion: 9.0, os_version: 9.0, pixelRatio: 2.625, platform: ANDROID, platformName: ANDROID, platformVersion: 9, projectName: Login page, realMobile: true, skipServerInstallation: true, statBarHeight: 63, systemPort: 8203, takesScreenshot: true, udid: FA83E1A00861, uiautomator2ServerLaunchTimeout: 60000, version: , viewportRect: {height: 1731, left: 0, top: 63, width: 1080}, warnings: {}, webStorageEnabled: false}
+Element: [[RemoteWebDriver:  on ANDROID (25a0f7c63faa502c1a3834feecd04988cff04b34)] -> id: com.liqvd.digibox.test:id/tvName]
+Session ID: 25a0f7c63faa502c1a3834feecd04988cff04b34
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:217)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:169)
+	at org.openqa.selenium.remote.codec.jwp.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:41)
+	at org.openqa.selenium.remote.codec.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:83)
+	at org.openqa.selenium.remote.codec.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:47)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:307)
+	at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:226)
+	at org.openqa.selenium.support.ui.ExpectedConditions$8.apply(ExpectedConditions.java:221)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at com.mamatha.dev.automation.pages.HomePageFactory.waitTillAllImagesLoad(HomePageFactory.java:90)
+	at com.mamatha.dev.automation.pageObjects.HomePageObjects.checkImages(HomePageObjects.java:52)
+	at com.mamatha.dev.automation.stepdefinitions.UploadStepDefinition.the_images_are_uploaded_to_digiboxx_homepage(UploadStepDefinition.java:52)
+	at ✽.The images are uploaded to digiboxx homepage(file:///Volumes/Macintosh%20HD%20-%20Data/WorkSpace/Git%20Files/diggiboxAuto/Features/HomePage.feature:24)
+]]></failure>
+</testcase>
+<testcase classname="Sign into Digiboxx" name="Create new folder" time="49.995">
+<system-out><![CDATA[Given I press the skip button...............................................passed
+Then I input the spacename..................................................passed
+And I input the email.......................................................passed
+And I input the password....................................................passed
+Then I click the signin button..............................................passed
+And verify that I have reached the homepage.................................passed
+Given I click on the add button.............................................passed
+And I click on the create folder button.....................................passed
+Then I provide a filename "Mamatha".........................................passed
+When I click the create button..............................................passed
+Then a folder "Mamatha" is created..........................................passed
+]]></system-out>
+</testcase>
+</testsuite>

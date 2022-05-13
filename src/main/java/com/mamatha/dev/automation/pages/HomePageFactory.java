@@ -39,7 +39,7 @@ public class HomePageFactory extends BaseCombinedDriver {
 //	@CacheLookup
 //	WebElement selectAll;
 
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
 
 	public HomePageFactory() {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 15), this);
@@ -82,8 +82,13 @@ public class HomePageFactory extends BaseCombinedDriver {
 
 	public boolean waitTillAllImagesLoad() {
 
-		By byImages = By.xpath("//android.widget.TextView[@resource-id=\"com.liqvd.digibox.test:id/tvName\"]");
-		wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(byImages)));
+		// By byImages =
+		// By.xpath("//android.widget.TextView[@resource-id=\"com.liqvd.digibox.test:id/tvName\"]");
+		By byImages = By.id("com.liqvd.digibox.test:id/tvName");
+		// wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(byImages)));
+		// wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(byImages));
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOfAllElementsLocatedBy(byImages)));
+
 		return true;
 	}
 

@@ -28,6 +28,7 @@ public class HomePageObjects extends HomePageFactory {
 
 	public void clickCreateBtn() {
 		getCreateFolderButton().click();
+
 	}
 
 	public boolean checkFolder(String folderName) {

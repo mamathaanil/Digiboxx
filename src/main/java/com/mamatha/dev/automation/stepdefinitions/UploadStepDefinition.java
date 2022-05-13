@@ -33,12 +33,12 @@ public class UploadStepDefinition {
 
 	@When("I click on single image")
 	public void i_click_on_single_image() throws InterruptedException {
-		uploadPO.clickImage("Phoenix1.jpeg");
+		uploadPO.clickImage("fish.jpeg");
 	}
 
 	@Then("The image is uploaded to digiboxx homepage")
 	public void the_image_is_uploaded_to_digiboxx_homepage() throws InterruptedException {
-		Assert.assertEquals(homePO.checkImage("Phoenix1.j..."), true);
+		Assert.assertEquals(homePO.checkImage("fish.jpeg"), true);
 
 	}
 
