@@ -25,4 +25,16 @@ public class FolderMenuPageObjects extends FolderMenuPageFactory {
 		getEditRenameFolder().sendKeys(newFolderName);
 	}
 
+	public void clickChangeColor() {
+		getChangeColor().click();
+	}
+
+	public void clickChooseColor(int index) {
+		getColorPallete(index).click();
+	}
+
+	public void clickAppyBtn() {
+		getApplyBtn().click();
+	}
+
 }

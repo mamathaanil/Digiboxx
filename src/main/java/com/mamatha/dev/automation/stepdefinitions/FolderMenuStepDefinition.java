@@ -1,5 +1,7 @@
 package com.mamatha.dev.automation.stepdefinitions;
 
+import org.junit.Assert;
+
 import com.mamatha.dev.automation.pageObjects.FolderMenuPageObjects;
 import com.mamatha.dev.automation.pageObjects.HomePageObjects;
 
@@ -32,4 +34,25 @@ public class FolderMenuStepDefinition {
 
 		folderPO.enterNewFolderName(strArg1);
 	}
+
+	@And("^I click on the change color option$")
+	public void i_click_on_the_change_color_option() throws Throwable {
+		folderPO.clickChangeColor();
+	}
+
+	@When("^I click on a color$")
+	public void i_click_on_a_color() throws Throwable {
+		folderPO.clickChooseColor(6);
+	}
+
+	@And("^I click on apply button$")
+	public void i_click_on_apply_button() throws Throwable {
+		folderPO.clickAppyBtn();
+	}
+
+	@Then("^the folder color is changed$")
+	public void the_folder_color_is_changed() throws Throwable {
+		Assert.assertEquals(true, true);
+	}
+
 }

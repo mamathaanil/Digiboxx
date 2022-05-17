@@ -33,7 +33,11 @@ public class HomePageObjects extends HomePageFactory {
 
 	public boolean checkFolder(String folderName) {
 
-		return getFolder(folderName).isDisplayed();
+		return getFolderName(folderName).isDisplayed();
+	}
+
+	public void clickFolder() {
+		getFolder().click();
 	}
 
 	public boolean checkImage(String imageName) throws InterruptedException {

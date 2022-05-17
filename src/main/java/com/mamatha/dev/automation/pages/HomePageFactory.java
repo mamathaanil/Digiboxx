@@ -22,18 +22,18 @@ public class HomePageFactory extends BaseCombinedDriver {
 	@FindBy(xpath = "//android.widget.FrameLayout[@content-desc=\"Add\"]/android.widget.FrameLayout/android.widget.ImageView")
 	@CacheLookup
 	WebElement addFile;
+//
+//	@FindBy(id = "com.liqvd.digibox.test:id/upload_new_file")
+//	@CacheLookup
+//	WebElement uploadFile;
 
-	@FindBy(id = "com.liqvd.digibox.test:id/upload_new_file")
-	@CacheLookup
-	WebElement uploadFile;
-
-	@FindBy(id = "com.liqvd.digibox.test:id/create_new_folder")
-	@CacheLookup
-	WebElement createFolder;
-
-	@FindBy(id = "com.liqvd.digibox.test:id/edtCreateFolderName")
-	@CacheLookup
-	WebElement enterFolderName;
+//	@FindBy(id = "com.liqvd.digibox.test:id/create_new_folder")
+//	@CacheLookup
+//	WebElement createFolder;
+//
+//	@FindBy(id = "com.liqvd.digibox.test:id/edtCreateFolderName")
+//	@CacheLookup
+//	WebElement enterFolderName;
 
 //	@FindBy(id = "com.liqvd.digibox.test:id/ivSelectAll")
 //	@CacheLookup
@@ -57,16 +57,25 @@ public class HomePageFactory extends BaseCombinedDriver {
 
 	public WebElement getUploadFile() {
 
+		By byUploadFolder = By.id("com.liqvd.digibox.test:id/upload_new_file");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(byUploadFolder));
+		WebElement uploadFile = driver.findElement(byUploadFolder);
 		return uploadFile;
 	}
 
 	public WebElement getCreateFolder() {
 
+		By byCreateFolder = By.id("com.liqvd.digibox.test:id/create_new_folder");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(byCreateFolder));
+		WebElement createFolder = driver.findElement(byCreateFolder);
 		return createFolder;
 	}
 
 	public WebElement getTypeFolderName() {
 
+		By byEnterFolderName = By.id("com.liqvd.digibox.test:id/edtCreateFolderName");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(byEnterFolderName));
+		WebElement enterFolderName = driver.findElement(byEnterFolderName);
 		return enterFolderName;
 	}
 
@@ -123,9 +132,17 @@ public class HomePageFactory extends BaseCombinedDriver {
 		return createButton;
 	}
 
-	public WebElement getFolder(String folderName) {
+	public WebElement getFolderName(String folderName) {
 
-		By byFolder = By.xpath("//android.widget.TextView[@text=\"" + folderName + "\"]");
+		By byFolderName = By.xpath("//android.widget.TextView[@text=\"" + folderName + "\"]");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(byFolderName));
+		WebElement folderByName = driver.findElement(byFolderName);
+		return folderByName;
+	}
+
+	public WebElement getFolder() {
+
+		By byFolder = By.id("com.liqvd.digibox.test:id/cvFolder");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(byFolder));
 		WebElement folder = driver.findElement(byFolder);
 		return folder;

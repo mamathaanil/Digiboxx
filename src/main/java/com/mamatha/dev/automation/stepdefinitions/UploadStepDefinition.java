@@ -15,6 +15,7 @@ public class UploadStepDefinition {
 	HomePageObjects homePO = new HomePageObjects();
 	UploadPageObjects uploadPO = new UploadPageObjects();
 
+	@And("^I click on add button$")
 	@Given("I click on the add button")
 	public void i_click_on_the_add_button() {
 		homePO.clickAddFile();
@@ -70,6 +71,11 @@ public class UploadStepDefinition {
 	@Then("^a folder \"([^\"]*)\" is created$")
 	public void a_folder_something_is_created(String strArg1) throws Throwable {
 		Assert.assertEquals(homePO.checkFolder(strArg1), true);
+	}
+
+	@When("^I click on folder$")
+	public void i_click_on_folder() throws Throwable {
+		homePO.clickFolder();
 	}
 
 }

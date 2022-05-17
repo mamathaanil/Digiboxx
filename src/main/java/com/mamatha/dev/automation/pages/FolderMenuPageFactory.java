@@ -85,4 +85,20 @@ public class FolderMenuPageFactory extends BaseCombinedDriver {
 		return editRename;
 	}
 
+	public WebElement getColorPallete(int index) {
+		// By byChooseColor = By.id("com.liqvd.digibox.test:id/colorPalette[" + index +
+		// "]");
+		By byChooseColor = By.xpath("//android.view.ViewGroup[" + index + "]");
+		wait.until(ExpectedConditions.elementToBeClickable(byChooseColor));
+		WebElement chooseColor = driver.findElement(byChooseColor);
+		return chooseColor;
+	}
+
+	public WebElement getApplyBtn() {
+		By byApplyBtn = By.id("com.liqvd.digibox.test:id/btnApply");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(byApplyBtn));
+		WebElement applyBtn = driver.findElement(byApplyBtn);
+		return applyBtn;
+	}
+
 }
