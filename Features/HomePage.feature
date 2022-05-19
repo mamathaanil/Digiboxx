@@ -12,14 +12,12 @@ Feature: Sign into Digiboxx
   Scenario: Upload a single image
     Given I click on the add button
     And I click on the upload button
-    Then I reach the folder with files
     When I click on single image
     Then The image is uploaded to digiboxx homepage
     
   Scenario: Upload multiple images
     Given I click on the add button
     And I click on the upload button
-    Then I reach the folder with files
     When I select multiple images
     Then The images are uploaded to digiboxx homepage
     
@@ -68,5 +66,38 @@ Feature: Sign into Digiboxx
     Then a folder "subfolder" is created
     
   
+  Scenario: Upload in sub folder
+    Given I click on the add button
+    And I click on the create folder button
+    Then I provide a filename "HowRU1"
+    When I click the create button
+    Then a folder "HowRU1" is created
+    When I click on folder
+    And I click on add button
+    And I click on the create folder button
+    Then I provide a filename "subfolder"
+    When I click the create button
+    Then a folder "subfolder" is created
+    When I click on folder
+    And I click on the add button
+    And I click on the upload button
+    When I click on single image
+    Then The image is uploaded to sub folder
     
-    
+  Scenario: Upload in sub folder
+    Given I click on the add button
+    And I click on the create folder button
+    Then I provide a filename "HowRU1"
+    When I click the create button
+    Then a folder "HowRU1" is created
+    When I click on folder
+    And I click on add button
+    And I click on the create folder button
+    Then I provide a filename "subfolder"
+    When I click the create button
+    Then a folder "subfolder" is created
+    When I click on folder
+    And I click on the add button
+    And I click on the upload button
+    When I select multiple images
+    Then The images are uploaded to digiboxx homepage

@@ -47,6 +47,7 @@ public class HomePageObjects extends HomePageFactory {
 	}
 
 	public void deleteAllImages() throws InterruptedException {
+		getHomePage().click();
 		getSelectAll().click();
 		getDelete().click();
 		getConfDelete().click();

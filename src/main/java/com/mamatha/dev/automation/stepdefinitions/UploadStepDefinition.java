@@ -3,6 +3,7 @@ package com.mamatha.dev.automation.stepdefinitions;
 import org.junit.Assert;
 
 import com.mamatha.dev.automation.pageObjects.HomePageObjects;
+import com.mamatha.dev.automation.pageObjects.SubFolderPageObjects;
 import com.mamatha.dev.automation.pageObjects.UploadPageObjects;
 
 import io.cucumber.java.en.And;
@@ -14,6 +15,7 @@ public class UploadStepDefinition {
 
 	HomePageObjects homePO = new HomePageObjects();
 	UploadPageObjects uploadPO = new UploadPageObjects();
+	SubFolderPageObjects subFolderPO = new SubFolderPageObjects();
 
 	@And("^I click on add button$")
 	@Given("I click on the add button")
@@ -43,6 +45,11 @@ public class UploadStepDefinition {
 
 	}
 
+	@Then("The image is uploaded to sub folder")
+	public void the_image_is_uploaded_to_sub_folder() throws InterruptedException {
+		Assert.assertEquals(subFolderPO.checkImage("fish.jpeg"), true);
+	}
+
 	@When("^I select multiple images$")
 	public void i_select_multiple_images() throws Throwable {
 		uploadPO.selectImages();
@@ -51,6 +58,11 @@ public class UploadStepDefinition {
 	@Then("^The images are uploaded to digiboxx homepage$")
 	public void the_images_are_uploaded_to_digiboxx_homepage() throws Throwable {
 		Assert.assertEquals(homePO.checkImages(), true);
+	}
+
+	@Then("The images are uploaded to sub folder")
+	public void the_images_are_uploaded_to_sub_folder() throws InterruptedException {
+		Assert.assertEquals(subFolderPO.checkImages(), true);
 	}
 
 	@And("^I click on the create folder button$")

@@ -44,7 +44,7 @@ public class LoginStepDefinition {
 	@And("^verify that I have reached the homepage$")
 	public void verify_that_i_have_reached_the_homepage() throws Throwable {
 		Thread.sleep(5000);
-		Assert.assertEquals(homePO.getHomePage(), "MyBoxx");
+		Assert.assertEquals(homePO.getHomePageTitle(), "MyBoxx");
 		System.out.println("We are in the homepage");
 	}
 

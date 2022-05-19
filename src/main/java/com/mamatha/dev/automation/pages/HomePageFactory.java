@@ -17,6 +17,10 @@ public class HomePageFactory extends BaseCombinedDriver {
 
 	@FindBy(id = "com.liqvd.digibox.test:id/tvFolderTitle")
 	@CacheLookup
+	WebElement homePageTitle;
+
+	@FindBy(xpath = "//android.widget.FrameLayout[@content-desc=\"Home\"]/android.widget.FrameLayout/android.widget.ImageView")
+	@CacheLookup
 	WebElement homePage;
 
 	@FindBy(xpath = "//android.widget.FrameLayout[@content-desc=\"Add\"]/android.widget.FrameLayout/android.widget.ImageView")
@@ -46,9 +50,14 @@ public class HomePageFactory extends BaseCombinedDriver {
 		// WaitHandler.waitForElement(homePage);
 	}
 
-	public String getHomePage() {
+	public String getHomePageTitle() {
 
-		return homePage.getAttribute("text");
+		return homePageTitle.getAttribute("text");
+	}
+
+	public WebElement getHomePage() {
+
+		return homePage;
 	}
 
 	public WebElement getAddFile() {
